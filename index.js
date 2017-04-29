@@ -1,4 +1,4 @@
-﻿console.log("Version 0.2.0");
+console.log("Version 0.2.0");
 
 // Load up all dependencies
 var AWS = require('aws-sdk');
@@ -9,7 +9,7 @@ var async = require('async');
 // Create a reference to an S3 client
 // in the desired region.
 function createS3(regionName) {
-    var config = { apiVersion: '2006-03-01' };
+    var config = { apiVersion: '2006-03-01', signatureVersion: 'v4' };
     
     if (regionName != null)
         config.region = regionName;
